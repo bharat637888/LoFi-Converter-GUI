@@ -78,8 +78,9 @@ def download_youtube_audio(youtube_link):
         song_name = yt.title
         
         # Download
-        out_file = f"uploaded_files/{uu}.m4a"
-        ys.download(filename=out_file)
+        filename = f"{uu}.m4a"
+        out_file = os.path.join("uploaded_files", filename)
+        ys.download(output_path="uploaded_files", filename=filename)
         print("Pytubefix success.")
         
         # Convert m4a to compatible mp3 bytes for preview
