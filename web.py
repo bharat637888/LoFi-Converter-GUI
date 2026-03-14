@@ -71,7 +71,12 @@ def download_youtube_audio(youtube_link):
     try:
         print(f"Attempting pytubefix for: {youtube_link}")
         # use_po_token=True is CRITICAL to bypass bots
-        yt = YouTube(youtube_link, use_po_token=True) 
+        yt = YouTube(
+            youtube_link,
+            use_po_token=True,
+            po_token=st.secrets["PO_TOKEN"],
+            visitor_data=st.secrets["VISITOR_DATA"]
+        ) 
         
         # Get audio stream
         ys = yt.streams.get_audio_only()
