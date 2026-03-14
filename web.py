@@ -105,7 +105,7 @@ def main():
     st.title(":microphone: Lofi Converter")
     st.info("Tip: Use Headphones for best experience :headphones:")
 
-    youtube_link = st.text_input("Enter YouTube link:", placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ", disabled=True)
+    youtube_link = st.text_input("Enter YouTube link:", placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ", disabled=False)
     
     uploaded_file = st.file_uploader("Upload audio file", type=["mp3", "wav", "m4a", "ogg", "flac"])
     
